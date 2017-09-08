@@ -216,12 +216,12 @@ public class CNNGradientCheckTest {
         int[] padding = {0, 0};
         int pnorm = 2;
 
-        String[] activations = {"sigmoid", "tanh"};
+        Activation[] activations = {Activation.SIGMOID, Activation.TANH};
         SubsamplingLayer.PoolingType[] poolingTypes =
                         new SubsamplingLayer.PoolingType[] {SubsamplingLayer.PoolingType.MAX,
                                         SubsamplingLayer.PoolingType.AVG, SubsamplingLayer.PoolingType.PNORM};
 
-        for (String afn : activations) {
+        for (Activation afn : activations) {
             for (SubsamplingLayer.PoolingType poolingType : poolingTypes) {
                 for (int minibatchSize : minibatchSizes) {
                     INDArray input = Nd4j.rand(minibatchSize, width * height * inputDepth);
@@ -283,12 +283,12 @@ public class CNNGradientCheckTest {
         int[] padding = {0, 0};
         int pNorm = 3;
 
-        String[] activations = {"sigmoid", "tanh"};
+        Activation[] activations = {Activation.SIGMOID, Activation.TANH};
         SubsamplingLayer.PoolingType[] poolingTypes =
                         new SubsamplingLayer.PoolingType[] {SubsamplingLayer.PoolingType.MAX,
                                         SubsamplingLayer.PoolingType.AVG, SubsamplingLayer.PoolingType.PNORM};
 
-        for (String afn : activations) {
+        for (Activation afn : activations) {
             for (SubsamplingLayer.PoolingType poolingType : poolingTypes) {
                 for (int minibatchSize : minibatchSizes) {
                     INDArray input = Nd4j.rand(minibatchSize, width * height * inputDepth);
@@ -341,14 +341,14 @@ public class CNNGradientCheckTest {
         int height = 5;
         int[] inputDepths = {1, 2, 4};
 
-        String[] activations = {"sigmoid", "tanh"};
+        Activation[] activations = {Activation.SIGMOID, Activation.TANH};
         SubsamplingLayer.PoolingType[] poolingTypes = new SubsamplingLayer.PoolingType[] {
                         SubsamplingLayer.PoolingType.MAX, SubsamplingLayer.PoolingType.AVG};
 
         Nd4j.getRandom().setSeed(12345);
 
         for (int inputDepth : inputDepths) {
-            for (String afn : activations) {
+            for (Activation afn : activations) {
                 for (SubsamplingLayer.PoolingType poolingType : poolingTypes) {
                     for (int minibatchSize : minibatchSizes) {
                         INDArray input = Nd4j.rand(minibatchSize, width * height * inputDepth);
