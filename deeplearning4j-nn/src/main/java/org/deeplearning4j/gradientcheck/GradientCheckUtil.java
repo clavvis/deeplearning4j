@@ -1,7 +1,6 @@
 package org.deeplearning4j.gradientcheck;
 
 import lombok.extern.slf4j.Slf4j;
-import org.nd4j.linalg.primitives.Pair;
 import org.deeplearning4j.nn.api.Layer;
 import org.deeplearning4j.nn.api.Updater;
 import org.deeplearning4j.nn.api.layers.IOutputLayer;
@@ -30,6 +29,7 @@ import org.nd4j.linalg.learning.config.NoOp;
 import org.nd4j.linalg.learning.config.Sgd;
 import org.nd4j.linalg.lossfunctions.ILossFunction;
 import org.nd4j.linalg.lossfunctions.impl.LossMCXENT;
+import org.nd4j.linalg.primitives.Pair;
 
 import java.util.ArrayList;
 import java.util.Arrays;
