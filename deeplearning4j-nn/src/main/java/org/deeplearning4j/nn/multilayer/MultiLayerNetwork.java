@@ -1569,6 +1569,14 @@ public class MultiLayerNetwork implements Serializable, Classifier, Layer, Neura
         return listeners;
     }
 
+    /**
+    *
+    * @return trainingListeners
+    */
+   public Collection<IterationListener> getTrainingListeners() {
+       return trainingListeners;
+   }
+
     @Override
     public void setListeners(Collection<IterationListener> listeners) {
         this.listeners = listeners;
